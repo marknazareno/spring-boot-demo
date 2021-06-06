@@ -42,6 +42,7 @@ jobs:
         with:
           repository: marknazareno/gitops-apps-prod
           path: gitops-apps-prod
+          token: ${{ secrets.GITOPS_TOKEN }}
 
       - name: Set up yq
         uses: mikefarah/yq@v4.9.3
