@@ -44,7 +44,7 @@ jobs:
           path: spring-boot-demo
 
       - name: Set up yq
-        uses: mikefarah/yq
+        uses: mikefarah/yq@v4.9.3
 
       - name: update yaml
         run: yq eval '.images[0].newTag="${{ env.IMAGE_TAG }}"' -i kustomization.yaml
