@@ -45,9 +45,8 @@ jobs:
 
       - name: Set up yq
         uses: mikefarah/yq@v4.9.3
-
-      - name: update yaml
-        run: yq eval '.images[0].newTag="${{ env.IMAGE_TAG }}"' -i kustomization.yaml
+        with:
+          cmd: yq eval '.images[0].newTag="${{ env.IMAGE_TAG }}"' -i kustomization.yaml
 
       - uses: actions/checkout@v2
       - name: commit updated yaml
