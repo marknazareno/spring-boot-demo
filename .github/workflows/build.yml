@@ -86,7 +86,7 @@ jobs:
 
       - name: Build app with pack CLI using Buildpack Cache image (see https://buildpacks.io/docs/app-developer-guide/using-cache-image/) & publish to Docker Hub
         run: |
-          pack build ghcr.io/marknazareno/spring-boot-demo:${{ env.IMAGE_TAG }} \
+          pack build ghcr.io/marknazareno/spring-boot-demo:${{ env.IMAGE_TAG }} -t latest \
               --builder paketobuildpacks/builder:base \
               --path . \
               --cache-image ghcr.io/marknazareno/spring-boot-demo:latest \
