@@ -89,5 +89,5 @@ jobs:
           pack build ghcr.io/marknazareno/spring-boot-demo:${{ env.IMAGE_TAG }} \
               --builder paketobuildpacks/builder:base \
               --path . \
-              --cache-image ghcr.io/marknazareno/spring-boot-demo:latest \
+              --cache-image ghcr.io/marknazareno/spring-boot-demo-cache:latest \
               --publish
