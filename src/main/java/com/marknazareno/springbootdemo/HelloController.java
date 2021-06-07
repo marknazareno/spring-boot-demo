@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class HelloController {
     @GetMapping
     public ResponseEntity<Message> getMessage() {
-        Message message = new Message("Hello Kubernetes v1!");
+        Message message = new Message("Hello Kubernetes v2!");
         return ResponseEntity.ok(message);
     }
 }
