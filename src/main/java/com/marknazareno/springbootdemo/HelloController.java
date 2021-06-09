@@ -1,16 +1,24 @@
 package com.marknazareno.springbootdemo;
 
+import org.springframework.boot.info.BuildProperties;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/hello")
+@RequestMapping("/info")
 public class HelloController {
+
+    final BuildProperties buildProperties;
+
+    public HelloController(BuildProperties buildProperties) {
+        this.buildProperties = buildProperties;
+    }
+
     @GetMapping
-    public ResponseEntity<Message> getMessage() {
-        Message message = new Message("Hello Kubernetes v3!");
-        return ResponseEntity.ok(message);
+    public ResponseEntity<Info> getMessage() {
+        Info info = new Info("Hello Kubernetes!", buildProperties);
+        return ResponseEntity.ok(info);
     }
 }
