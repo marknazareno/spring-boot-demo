@@ -8,11 +8,11 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/info")
-public class HelloController {
+public class InfoController {
 
     final BuildProperties buildProperties;
 
-    public HelloController(BuildProperties buildProperties) {
+    public InfoController(BuildProperties buildProperties) {
         this.buildProperties = buildProperties;
     }
 
