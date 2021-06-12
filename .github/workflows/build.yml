@@ -64,7 +64,7 @@ jobs:
       - name: Build Image
         run: |
           mvn -B deploy \
-          -DaltDeploymentRepository=github:https://maven.pkg.github.com/marknazareno/spring-boot-demo
+          -DaltDeploymentRepository=github::default::https://maven.pkg.github.com/marknazareno/spring-boot-demo
           -Dspring-boot.build-image.imageName=ghcr.io/marknazareno/spring-boot-demo:${{ env.IMAGE_TAG }}
 
       - name: Login to Registry
